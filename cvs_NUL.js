@@ -121,6 +121,7 @@ function addLoginWithBiometricsLink() {
 }
 
 function addPasswordInput(anchorElement) {
+
     //
     var parentDivElement = document.createElement("div");
     parentDivElement.setAttribute("class", "input-wrapper _input-wrapper");
@@ -209,6 +210,7 @@ function addPasswordInput(anchorElement) {
 
     // anchorElement.parentNode.insertBefore(br, anchorElement);
     anchorElement.parentNode.insertBefore(parentDivElement, anchorElement);
+    
 }
 
 function biometricsLinkOnClick() {
