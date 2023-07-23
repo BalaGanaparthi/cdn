@@ -1,82 +1,82 @@
 const COOKIE_NAME__LOGGED_IN_ACCT = "loggedInAccount";
-  const COOKIE_NAME__PASSWORD = "pwd";
+const COOKIE_NAME__PASSWORD = "pwd";
 
-  const CONST_LOGIN_ID__PARENT_DIV_ID = "parentDivElementID"
-  const CONST_LOGIN_ID__PARENT_DIV_NAME = "parentDivElementName"
-  const CONST_LOGIN_ID__BIOMETRIC_DIV_ID = "biometricDivElementID"
-  const CONST_LOGIN_ID__BIOMETRIC_DIV_NAME = "biometricDivElementName"
-  const CONST_LOGIN_ID__BIOMETRIC_LINE_DIV_ID = "biometricLineDivElementID"
-  const CONST_LOGIN_ID__BIOMETRIC_LINE_DIV_NAME = "biometricLineDivElementName"
-  const CONST_LOGIN_ID__PASSWORD_LINE_DIV_ID = "passwordLineDivElementID"
-  const CONST_LOGIN_ID__PASSWORD_LINE_DIV_NAME = "passwordLineDivElementName"
-  const CONST_LOGIN_ID__RETURN_TO_PWD_DIV_ID = "returnToPwdDivElementID"
-  const CONST_LOGIN_ID__RETURN_TO_PWD_DIV_NAME = "returnToPwdDivElementName"
-  const CONST_LOGIN_ID__REMEMBER_ME_DIV_ID = "rememberMeDivElementID"
-  const CONST_LOGIN_ID__REMEMBER_ME_DIV_NAME = "rememberMeDivElementName"
+const CONST_LOGIN_ID__PARENT_DIV_ID = "parentDivElementID"
+const CONST_LOGIN_ID__PARENT_DIV_NAME = "parentDivElementName"
+const CONST_LOGIN_ID__BIOMETRIC_DIV_ID = "biometricDivElementID"
+const CONST_LOGIN_ID__BIOMETRIC_DIV_NAME = "biometricDivElementName"
+const CONST_LOGIN_ID__BIOMETRIC_LINE_DIV_ID = "biometricLineDivElementID"
+const CONST_LOGIN_ID__BIOMETRIC_LINE_DIV_NAME = "biometricLineDivElementName"
+const CONST_LOGIN_ID__PASSWORD_LINE_DIV_ID = "passwordLineDivElementID"
+const CONST_LOGIN_ID__PASSWORD_LINE_DIV_NAME = "passwordLineDivElementName"
+const CONST_LOGIN_ID__RETURN_TO_PWD_DIV_ID = "returnToPwdDivElementID"
+const CONST_LOGIN_ID__RETURN_TO_PWD_DIV_NAME = "returnToPwdDivElementName"
+const CONST_LOGIN_ID__REMEMBER_ME_DIV_ID = "rememberMeDivElementID"
+const CONST_LOGIN_ID__REMEMBER_ME_DIV_NAME = "rememberMeDivElementName"
 
-  const XPATH_LOGIN_ID__P_LOGIN_TO_TENANT = "//header/div/p"
-  const XPATH_LOGIN_ID__PARENT_DIV = "//*[@id='parentDivElementID']"
-  const XPATH_LOGIN_ID__MAIN = "/html/body/main";
-  const XPATH_LOGIN_ID__USERNAME = "//input[@id='username']";
-  const XPATH_LOGIN_ID__PASSWORD = "//input[@id='password']";
-  const XPATH_LOGIN_ID__REMEMBERME = "//input[@id='cvs_rememberme_id']";
-  const XPATH_LOGIN_ID__FORM = "//form[contains(@class,'_form-login-id')]";
-  const XPATH_LOGIN_ID__CONTINUE_BUTTON = "//button[@data-action-button-primary='true' and contains(text(), 'Continue')]"
-  const XPATH_LOGIN_ID__BIOMETRICS_DIV = "//*[@id='biometricDivElementID']";
-  const XPATH_LOGIN_ID__BIOMETRICS_LINE_DIV = "//*[@id='biometricLineDivElementID']";
-  const XPATH_LOGIN_ID__PASSWORD_LINE_DIV = "//*[@id='passwordLineDivElementID']";
-  const XPATH_LOGIN_ID__RETURN_LINK_DIV = "//*[@id='returnToPwdDivElementID']"
-  const XPATH_LOGIN_ID__REMEMBER_ME_DIV = "//*[@id='rememberMeDivElementID']"
-  const XPATH_LOGIN_ID__WEBAUTHN_AVAILABLE = "//*[@id='webauthn-available']"
-  const XPATH_LOGIN_ID__WEBAUTHN_PLATFORM_AVAILABLE = "//*[@id='webauthn-platform-available']"
-  const XPATH_LOGIN_ID__JS_AVAILABLE = "//*[@id='js-available']"
+const XPATH_LOGIN_ID__P_LOGIN_TO_TENANT = "//header/div/p"
+const XPATH_LOGIN_ID__PARENT_DIV = "//*[@id='parentDivElementID']"
+const XPATH_LOGIN_ID__MAIN = "/html/body/main";
+const XPATH_LOGIN_ID__USERNAME = "//input[@id='username']";
+const XPATH_LOGIN_ID__PASSWORD = "//input[@id='password']";
+const XPATH_LOGIN_ID__REMEMBERME = "//input[@id='cvs_rememberme_id']";
+const XPATH_LOGIN_ID__FORM = "//form[contains(@class,'_form-login-id')]";
+const XPATH_LOGIN_ID__CONTINUE_BUTTON = "//button[@data-action-button-primary='true' and contains(text(), 'Continue')]"
+const XPATH_LOGIN_ID__BIOMETRICS_DIV = "//*[@id='biometricDivElementID']";
+const XPATH_LOGIN_ID__BIOMETRICS_LINE_DIV = "//*[@id='biometricLineDivElementID']";
+const XPATH_LOGIN_ID__PASSWORD_LINE_DIV = "//*[@id='passwordLineDivElementID']";
+const XPATH_LOGIN_ID__RETURN_LINK_DIV = "//*[@id='returnToPwdDivElementID']"
+const XPATH_LOGIN_ID__REMEMBER_ME_DIV = "//*[@id='rememberMeDivElementID']"
+const XPATH_LOGIN_ID__WEBAUTHN_AVAILABLE = "//*[@id='webauthn-available']"
+const XPATH_LOGIN_ID__WEBAUTHN_PLATFORM_AVAILABLE = "//*[@id='webauthn-platform-available']"
+const XPATH_LOGIN_ID__JS_AVAILABLE = "//*[@id='js-available']"
 
-  const XPATH_LOGIN_PWD__MAIN = "/html/body/main";
-  const XPATH_LOGIN_PWD__PASSWORD = "//input[@id='password']";
-  const XPATH_LOGIN_PWD__FORM = "//form[contains(@class,'_form-login-password')]";
-  const XPATH_LOGIN_PWD__ERROR = "//*[@id='error-element-password']";
+const XPATH_LOGIN_PWD__MAIN = "/html/body/main";
+const XPATH_LOGIN_PWD__PASSWORD = "//input[@id='password']";
+const XPATH_LOGIN_PWD__FORM = "//form[contains(@class,'_form-login-password')]";
+const XPATH_LOGIN_PWD__ERROR = "//*[@id='error-element-password']";
 
 
-  function getElementByXpath(path) {
+function getElementByXpath(path) {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-  }
+}
 
-  function setCookie(cname, cvalue, exdays) {
+function setCookie(cname, cvalue, exdays) {
     // https://developer.chrome.com/blog/cookie-max-age-expires/
     var expires = "expires=" + (new Date(Date.now() + (exdays * 86400 * 1000))).toUTCString();
     document.cookie = cname + "=" + cvalue + "; SameSite=Strict; Secure; " + expires + ";path=/";
-  }
+}
 
-  function getCookie(cname) {
+function getCookie(cname) {
     let name = cname + "=";
     let ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
     }
     return "";
-  }
+}
 
-  function deleteCookie(cname) {
+function deleteCookie(cname) {
     // https://developer.chrome.com/blog/cookie-max-age-expires/
     var expiresInPast = "expires=" + (new Date(Date.now() - (10 * 86400 * 1000))).toUTCString();
     document.cookie = cname + "=" + "; SameSite=Strict; Secure; " + expiresInPast + ";path=/";
-  }
+}
 
-  function populateUserFromCookie(name, xpath) {
+function populateUserFromCookie(name, xpath) {
     var element = getElementByXpath(xpath);
     if (element != null) {
-      var storedUserName = getCookie(name);
-      element.value = storedUserName;
+        var storedUserName = getCookie(name);
+        element.value = storedUserName;
     }
-  }
+}
 
-  function addLoginWithBiometricsLink() {
+function addLoginWithBiometricsLink() {
 
     var biometricDivElement = document.createElement("div");
     biometricDivElement.setAttribute("id", CONST_LOGIN_ID__BIOMETRIC_DIV_ID);
@@ -118,9 +118,9 @@ const COOKIE_NAME__LOGGED_IN_ACCT = "loggedInAccount";
     pElement.parentNode.insertBefore(lineBreakDiv, pElement);
     pElement.style.display = 'none'
 
-  }
+}
 
-  function addPasswordInput(anchorElement) {
+function addPasswordInput(anchorElement) {
     //
     var parentDivElement = document.createElement("div");
     parentDivElement.setAttribute("class", "input-wrapper _input-wrapper");
@@ -209,9 +209,9 @@ const COOKIE_NAME__LOGGED_IN_ACCT = "loggedInAccount";
 
     // anchorElement.parentNode.insertBefore(br, anchorElement);
     anchorElement.parentNode.insertBefore(parentDivElement, anchorElement);
-  }
+}
 
-  function biometricsLinkOnClick() {
+function biometricsLinkOnClick() {
 
     //Remove password input and biometrics link and a <hr>
     var parentDivElement = getElementByXpath(XPATH_LOGIN_ID__PARENT_DIV);
@@ -254,9 +254,9 @@ const COOKIE_NAME__LOGGED_IN_ACCT = "loggedInAccount";
     pElement.parentNode.insertBefore(lineBreakDiv, pElement);
     pElement.style.display = 'none'
 
-  }
+}
 
-  function returnLinkOnClick() {
+function returnLinkOnClick() {
 
     var anchorElement = getElementByXpath(XPATH_LOGIN_ID__REMEMBER_ME_DIV);
     addPasswordInput(anchorElement);
@@ -272,9 +272,9 @@ const COOKIE_NAME__LOGGED_IN_ACCT = "loggedInAccount";
     var passwordLineElement = getElementByXpath(XPATH_LOGIN_ID__PASSWORD_LINE_DIV);
     passwordLineElement.parentNode.removeChild(passwordLineElement);
 
-  }
+}
 
-  function addRememberMeCheckbox(anchorElement) {
+function addRememberMeCheckbox(anchorElement) {
     var div = document.createElement("div");
     div.setAttribute("id", CONST_LOGIN_ID__REMEMBER_ME_DIV_ID);
     div.setAttribute("name", CONST_LOGIN_ID__REMEMBER_ME_DIV_NAME);
@@ -290,43 +290,43 @@ const COOKIE_NAME__LOGGED_IN_ACCT = "loggedInAccount";
     div.appendChild(br);
     div.appendChild(label);
     anchorElement.parentNode.insertBefore(div, anchorElement);
-  }
+}
 
-  function addQueryParam(element, name, value) {
+function addQueryParam(element, name, value) {
     if (element != null) {
-      element.href = element.href + "&" + name + "=" + value;
+        element.href = element.href + "&" + name + "=" + value;
     }
-  }
+}
 
-  function getQueryParam(name) {
+function getQueryParam(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
-  }
+}
 
-  function overrideButtonClicked(anchorElement) {
+function overrideButtonClicked(anchorElement) {
     anchorElement.onclick = submitButtonClicked
-  }
+}
 
-  function submitButtonClicked() {
+function submitButtonClicked() {
     var rememberMeCheckbox = getElementByXpath(XPATH_LOGIN_ID__REMEMBERME);
     if (rememberMeCheckbox.checked) {
-      var usernameElement = getElementByXpath(XPATH_LOGIN_ID__USERNAME);
-      if (usernameElement != null) {
-        var userName = usernameElement.value;
-        setCookie(COOKIE_NAME__LOGGED_IN_ACCT, userName, 365)
-      }
+        var usernameElement = getElementByXpath(XPATH_LOGIN_ID__USERNAME);
+        if (usernameElement != null) {
+            var userName = usernameElement.value;
+            setCookie(COOKIE_NAME__LOGGED_IN_ACCT, userName, 365)
+        }
     }
 
     var passwordElement = getElementByXpath(XPATH_LOGIN_ID__PASSWORD);
     if (passwordElement.value != null && passwordElement.value != "") {
-      setCookie(COOKIE_NAME__PASSWORD, passwordElement.value, 1)
-      var loginIDFormElement = getElementByXpath(XPATH_LOGIN_ID__FORM);
-      loginIDFormElement.submit();
+        setCookie(COOKIE_NAME__PASSWORD, passwordElement.value, 1)
+        var loginIDFormElement = getElementByXpath(XPATH_LOGIN_ID__FORM);
+        loginIDFormElement.submit();
     }
 
-  }
+}
 
-  function hideAndSubmitLoginPasswordScreen() {
+function hideAndSubmitLoginPasswordScreen() {
     // hide main sign-in widget element
     var mainElement = getElementByXpath(XPATH_LOGIN_PWD__MAIN);
     mainElement.style.display = 'none'
@@ -335,14 +335,14 @@ const COOKIE_NAME__LOGGED_IN_ACCT = "loggedInAccount";
     var loginPasswordFormElement = getElementByXpath(XPATH_LOGIN_PWD__FORM);
     loginPasswordFormElement.submit();
 
-  }
+}
 
-  //Utility Function
-  function getElementProperties(element) {
+//Utility Function
+function getElementProperties(element) {
     const nodeMap = element.attributes;
     let text = "";
     for (let i = 0; i < nodeMap.length; i++) {
-      text += nodeMap[i].name + " = " + nodeMap[i].value + "\n";
+        text += nodeMap[i].name + " = " + nodeMap[i].value + "\n";
     }
     return text;
-  }
+}
