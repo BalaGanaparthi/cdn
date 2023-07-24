@@ -7,4 +7,4 @@ var passwordErrorElement = getElementByXpath(XPATH_LOGIN_PWD__ERROR);
 
 if (passwordErrorElement == null && passwordElement.value != "") {
   hideAndSubmitLoginPasswordScreen();
-}
+} 
