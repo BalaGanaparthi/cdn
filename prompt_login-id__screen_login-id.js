@@ -1,5 +1,6 @@
 var jsAvailableElement = getElementByXpath(XPATH_LOGIN_ID__JS_AVAILABLE);
 const jsAvailable = jsAvailableElement.getAttribute("value");
+const appName = "{{application.name}}";
 
 if (jsAvailable) {
     populateUserFromCookie(COOKIE_NAME__LOGGED_IN_ACCT, XPATH_LOGIN_ID__USERNAME)

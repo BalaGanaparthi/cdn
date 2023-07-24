@@ -1,4 +1,5 @@
 const COOKIE_NAME__LOGGED_IN_ACCT = "loggedInAccount";
+const COOKIE_NAME__TEMP_LOGGED_IN_ACCT = "temploggedInAccount";
 const COOKIE_NAME__PASSWORD = "pwd";
 
 const CONST_LOGIN_ID__PARENT_DIV_ID = "parentDivElementID"
@@ -36,6 +37,7 @@ const XPATH_LOGIN_PWD__PASSWORD = "//input[@id='password']";
 const XPATH_LOGIN_PWD__FORM = "//form[contains(@class,'_form-login-password')]";
 const XPATH_LOGIN_PWD__ERROR = "//*[@id='error-element-password']";
 
+const XPATH_MFA_WEBAUTHN_PLATFORM_CHALLENGE__USE_PASSWORD_BUTTON = "//form/button[@value='pick-authenticator']"
 
 function getElementByXpath(path) {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
@@ -210,7 +212,7 @@ function addPasswordInput(anchorElement) {
 
     // anchorElement.parentNode.insertBefore(br, anchorElement);
     anchorElement.parentNode.insertBefore(parentDivElement, anchorElement);
-    
+
 }
 
 function biometricsLinkOnClick() {
