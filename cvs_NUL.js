@@ -38,6 +38,7 @@ const XPATH_LOGIN_PWD__FORM = "//form[contains(@class,'_form-login-password')]";
 const XPATH_LOGIN_PWD__ERROR = "//*[@id='error-element-password']";
 
 const XPATH_MFA_WEBAUTHN_PLATFORM_CHALLENGE__USE_PASSWORD_BUTTON = "//form/button[@value='pick-authenticator']"
+const XPATH_MFA_WEBAUTHN_PLATFORM_CHALLENGE__MAIN = "/html/body/main";
  
 function getElementByXpath(path) {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
