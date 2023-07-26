@@ -31,6 +31,7 @@ const XPATH_LOGIN_ID__REMEMBER_ME_DIV = "//*[@id='rememberMeDivElementID']"
 const XPATH_LOGIN_ID__WEBAUTHN_AVAILABLE = "//*[@id='webauthn-available']"
 const XPATH_LOGIN_ID__WEBAUTHN_PLATFORM_AVAILABLE = "//*[@id='webauthn-platform-available']"
 const XPATH_LOGIN_ID__JS_AVAILABLE = "//*[@id='js-available']"
+const XPATH_LOGIN_ID__DIV_USERNAME = "//div[@data-dynamic-label-for='username']"
 
 const XPATH_LOGIN_PWD__MAIN = "/html/body/main";
 const XPATH_LOGIN_PWD__PASSWORD = "//input[@id='password']";
@@ -39,7 +40,7 @@ const XPATH_LOGIN_PWD__ERROR = "//*[@id='error-element-password']";
 
 const XPATH_MFA_WEBAUTHN_PLATFORM_CHALLENGE__USE_PASSWORD_BUTTON = "//form/button[@value='pick-authenticator']"
 const XPATH_MFA_WEBAUTHN_PLATFORM_CHALLENGE__MAIN = "/html/body/main";
- 
+
 function getElementByXpath(path) {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }
@@ -258,6 +259,13 @@ function biometricsLinkOnClick() {
     pElement.parentNode.insertBefore(returnToPwdDivElement, pElement);
     pElement.parentNode.insertBefore(lineBreakDiv, pElement);
     pElement.style.display = 'none'
+
+    var usernameElement = getElementByXpath(XPATH_LOGIN_ID__USERNAME);
+    if (usernameElement.value == null || usernameElement.value == "") {
+        usernameElement.setAttribute("readonly", "")
+        var divUsernameElement = getElementByXpath(XPATH_LOGIN_ID__DIV_USERNAME);
+        divUsernameElement.setAttribute("readonly", "")
+    }
 
 }
 
