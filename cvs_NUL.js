@@ -278,7 +278,6 @@ function biometricsLinkOnClick() {
     var remembermeDivElement = getElementByXpath(XPATH_LOGIN_ID__REMEMBER_ME_DIV);
     remembermeDivElement.style.display = 'none'
     // remembermeDivElement.parentNode.removeChild(remembermeDivElement)
-    
 
 }
 
@@ -295,8 +294,8 @@ function returnLinkOnClick() {
     var returnLinkElement = getElementByXpath(XPATH_LOGIN_ID__RETURN_LINK_DIV);
     returnLinkElement.parentNode.removeChild(returnLinkElement);
 
-    var passwordLineElement = getElementByXpath(XPATH_LOGIN_ID__PASSWORD_LINE_DIV);
-    passwordLineElement.parentNode.removeChild(passwordLineElement);
+    // var passwordLineElement = getElementByXpath(XPATH_LOGIN_ID__PASSWORD_LINE_DIV);
+    // passwordLineElement.parentNode.removeChild(passwordLineElement);
 
     var usernameElement = getElementByXpath(XPATH_LOGIN_ID__USERNAME);
     usernameElement.removeAttribute("readonly")
