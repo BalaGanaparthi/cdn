@@ -267,6 +267,9 @@ function biometricsLinkOnClick() {
         divUsernameElement.style.display = 'none'
     }
 
+    var remembermeDivElement = getElementByXpath(XPATH_LOGIN_ID__REMEMBERME);
+    remembermeDivElement.style.display = 'none'
+
 }
 
 function returnLinkOnClick() {
@@ -289,7 +292,10 @@ function returnLinkOnClick() {
     usernameElement.removeAttribute("readonly")
     var divUsernameElement = getElementByXpath(XPATH_LOGIN_ID__DIV_USERNAME);
     divUsernameElement.removeAttribute("style")
-    
+
+    var remembermeDivElement = getElementByXpath(XPATH_LOGIN_ID__REMEMBERME);
+    remembermeDivElement.removeAttribute("style")
+
 }
 
 function addRememberMeCheckbox(anchorElement) {
