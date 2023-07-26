@@ -45,6 +45,10 @@ function getElementByXpath(path) {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }
 
+function insertAfterElement(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
 function setCookie(cname, cvalue, exdays) {
     // https://developer.chrome.com/blog/cookie-max-age-expires/
     var expires = "expires=" + (new Date(Date.now() + (exdays * 86400 * 1000))).toUTCString();
@@ -246,19 +250,23 @@ function biometricsLinkOnClick() {
     aReturn.appendChild(returnText);
     returnToPwdDivElement.appendChild(aReturn);
 
-    var lineBreakDiv = document.createElement("div");
-    lineBreakDiv.setAttribute("class", 'ca139301f')
-    lineBreakDiv.setAttribute("id", CONST_LOGIN_ID__PASSWORD_LINE_DIV_ID);
-    lineBreakDiv.setAttribute("name", CONST_LOGIN_ID__PASSWORD_LINE_DIV_NAME);
-    var lineBreakSpan = document.createElement("span");
-    var orText = document.createTextNode("Or");
-    lineBreakSpan.appendChild(orText);
-    lineBreakDiv.appendChild(lineBreakSpan)
+    // var lineBreakDiv = document.createElement("div");
+    // lineBreakDiv.setAttribute("class", 'ca139301f')
+    // lineBreakDiv.setAttribute("id", CONST_LOGIN_ID__PASSWORD_LINE_DIV_ID);
+    // lineBreakDiv.setAttribute("name", CONST_LOGIN_ID__PASSWORD_LINE_DIV_NAME);
+    // var lineBreakSpan = document.createElement("span");
+    // var orText = document.createTextNode("Or");
+    // lineBreakSpan.appendChild(orText);
+    // lineBreakDiv.appendChild(lineBreakSpan)
 
     var pElement = getElementByXpath(XPATH_LOGIN_ID__P_LOGIN_TO_TENANT);
-    pElement.parentNode.insertBefore(returnToPwdDivElement, pElement);
-    pElement.parentNode.insertBefore(lineBreakDiv, pElement);
     pElement.style.display = 'none'
+    // pElement.parentNode.insertBefore(returnToPwdDivElement, pElement);
+    // pElement.parentNode.insertBefore(lineBreakDiv, pElement);
+    
+    var continueButtonElement = getElementByXpath(XPATH_LOGIN_ID__CONTINUE_BUTTON);
+    
+    insertAfterElement(continueButtonElement, returnToPwdDivElement)
 
     var usernameElement = getElementByXpath(XPATH_LOGIN_ID__USERNAME);
     if (usernameElement.value != null || usernameElement.value != "") {
