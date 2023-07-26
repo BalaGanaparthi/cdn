@@ -269,11 +269,18 @@ function biometricsLinkOnClick() {
 
     insertAfterElement(continueButtonElement, returnToPwdDivElement)
 
+    var divUsernameElement = getElementByXpath(XPATH_LOGIN_ID__DIV_USERNAME);
     var usernameElement = getElementByXpath(XPATH_LOGIN_ID__USERNAME);
-    if (usernameElement.value != null || usernameElement.value != "") {
+    if (usernameElement.value != null && usernameElement.value != "") {
         usernameElement.setAttribute("readonly", "")
-        var divUsernameElement = getElementByXpath(XPATH_LOGIN_ID__DIV_USERNAME);
         divUsernameElement.style.display = 'none'
+    }else{
+        if (usernameElement.getAttribute("readonly") != null) {
+            usernameElement.removeAttribute("readonly")
+        }
+        if (divUsernameElement.getAttribute("style") != null) {
+            divUsernameElement.removeAttribute("style")
+        }
     }
 
     var remembermeDivElement = getElementByXpath(XPATH_LOGIN_ID__REMEMBER_ME_DIV);
@@ -305,11 +312,15 @@ function returnLinkOnClick() {
         }
     }
 
-    var divUsernameElement = getElementByXpath(XPATH_LOGIN_ID__REMEMBER_ME_DIV);
+    var divRememberMeElement = getElementByXpath(XPATH_LOGIN_ID__REMEMBER_ME_DIV);
+    if (divRememberMeElement.getAttribute("style") != null) {
+        divRememberMeElement.removeAttribute("style")
+    }
+
+    var divUsernameElement = getElementByXpath(XPATH_LOGIN_ID__DIV_USERNAME);
     if (divUsernameElement.getAttribute("style") != null) {
         divUsernameElement.removeAttribute("style")
     }
-
 
     // var anchorElement = getElementByXpath(XPATH_LOGIN_ID__CONTINUE_BUTTON);
     // addRememberMeCheckbox(anchorElement)
