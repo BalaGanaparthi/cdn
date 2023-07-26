@@ -249,7 +249,7 @@ function biometricsLinkOnClick() {
     aReturn.appendChild(imageReturn);
     aReturn.appendChild(returnText);
     returnToPwdDivElement.appendChild(aReturn);
-
+ 
     // var lineBreakDiv = document.createElement("div");
     // lineBreakDiv.setAttribute("class", 'ca139301f')
     // lineBreakDiv.setAttribute("id", CONST_LOGIN_ID__PASSWORD_LINE_DIV_ID);
