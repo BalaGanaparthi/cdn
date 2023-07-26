@@ -146,66 +146,66 @@ function addPasswordInput(anchorElement) {
     passwordElement.setAttribute("autocapitalize", "none")
     passwordElement.setAttribute("spellcheck", "false")
     passwordElement.setAttribute("autofocus", "")
-    //
-    var passwordLabelElement = document.createElement("label");
-    passwordLabelElement.setAttribute("class", "no-js")
-    passwordLabelElement.setAttribute("for", "password")
-    var passwordLabelTextElement = document.createTextNode(" Password ");
-    passwordLabelElement.appendChild(passwordLabelTextElement);
-    //
-    var passwordDivElement = document.createElement("div");
-    passwordDivElement.setAttribute("class", "js-required");
-    passwordDivElement.setAttribute("data-dynamic-label-for", "password");
-    passwordDivElement.setAttribute("aria-hidden", "true");
-    var passwordDivTextElement = document.createTextNode(" Password ");
-    passwordDivElement.appendChild(passwordDivTextElement);
-    //
-    var passwordToggleButtonElement = document.createElement("button");
-    passwordToggleButtonElement.setAttribute("type", "button");
-    passwordToggleButtonElement.setAttribute("class", "ulp-button-icon _button-icon");
-    // passwordToggleButtonElement.setAttribute("class","cf1ef5a0b ulp-button-icon c9f67a967 _button-icon");
-    passwordToggleButtonElement.setAttribute("data-action", "toggle");
-    //
-    var passwordToggleShowSpanElement = document.createElement("span");
-    passwordToggleShowSpanElement.setAttribute("aria-hidden", "true");
-    passwordToggleShowSpanElement.setAttribute("class", "password-icon-tooltip show-password-tooltip");
-    var passwordToggleShowSpanTextElement = document.createTextNode("Show password");
-    passwordToggleShowSpanElement.appendChild(passwordToggleShowSpanTextElement);
-    //
-    var passwordToggleHideSpanElement = document.createElement("span");
-    passwordToggleHideSpanElement.setAttribute("aria-hidden", "true");
-    passwordToggleHideSpanElement.setAttribute("class", "password-icon-tooltip hide-password-tooltip hide");
-    var passwordToggleHideSpanTextElement = document.createTextNode("Hide password");
-    passwordToggleHideSpanElement.appendChild(passwordToggleHideSpanTextElement);
-    //
-    var passwordToggleShowSRSpanElement = document.createElement("span");
-    passwordToggleShowSRSpanElement.setAttribute("data-label", "show-password");
-    passwordToggleShowSRSpanElement.setAttribute("class", "screen-reader-only password-toggle-label");
-    var passwordToggleShowSRSpanTextElement = document.createTextNode("Show password");
-    passwordToggleShowSRSpanElement.appendChild(passwordToggleShowSRSpanTextElement);
-    //
-    var passwordToggleHideSRSpanElement = document.createElement("span");
-    passwordToggleHideSRSpanElement.setAttribute("data-label", "hide-password");
-    passwordToggleHideSRSpanElement.setAttribute("class", "screen-reader-only password-toggle-label hide");
-    var passwordToggleHideSRSpanTextElement = document.createTextNode("Hide password");
-    passwordToggleHideSRSpanElement.appendChild(passwordToggleHideSRSpanTextElement);
-    //
-    var passwordSpanElement = document.createElement("span");
-    passwordSpanElement.setAttribute("aria-hidden", "true");
-    passwordSpanElement.setAttribute("class", "password js-required");
-    // passwordSpanElement.setAttribute("class","cf12e1c5c password js-required");
-    //
-    passwordToggleButtonElement.appendChild(passwordToggleShowSpanElement);
-    passwordToggleButtonElement.appendChild(passwordToggleHideSpanElement);
-    passwordToggleButtonElement.appendChild(passwordToggleShowSRSpanElement);
-    passwordToggleButtonElement.appendChild(passwordToggleHideSRSpanElement);
-    passwordToggleButtonElement.appendChild(passwordSpanElement);
-    //
-    //
-    childDivElement.appendChild(passwordLabelElement);
+    // //
+    // var passwordLabelElement = document.createElement("label");
+    // passwordLabelElement.setAttribute("class", "no-js")
+    // passwordLabelElement.setAttribute("for", "password")
+    // var passwordLabelTextElement = document.createTextNode(" Password ");
+    // passwordLabelElement.appendChild(passwordLabelTextElement);
+    // //
+    // var passwordDivElement = document.createElement("div");
+    // passwordDivElement.setAttribute("class", "js-required");
+    // passwordDivElement.setAttribute("data-dynamic-label-for", "password");
+    // passwordDivElement.setAttribute("aria-hidden", "true");
+    // var passwordDivTextElement = document.createTextNode(" Password ");
+    // passwordDivElement.appendChild(passwordDivTextElement);
+    // //
+    // var passwordToggleButtonElement = document.createElement("button");
+    // passwordToggleButtonElement.setAttribute("type", "button");
+    // passwordToggleButtonElement.setAttribute("class", "ulp-button-icon _button-icon");
+    // // passwordToggleButtonElement.setAttribute("class","cf1ef5a0b ulp-button-icon c9f67a967 _button-icon");
+    // passwordToggleButtonElement.setAttribute("data-action", "toggle");
+    // //
+    // var passwordToggleShowSpanElement = document.createElement("span");
+    // passwordToggleShowSpanElement.setAttribute("aria-hidden", "true");
+    // passwordToggleShowSpanElement.setAttribute("class", "password-icon-tooltip show-password-tooltip");
+    // var passwordToggleShowSpanTextElement = document.createTextNode("Show password");
+    // passwordToggleShowSpanElement.appendChild(passwordToggleShowSpanTextElement);
+    // //
+    // var passwordToggleHideSpanElement = document.createElement("span");
+    // passwordToggleHideSpanElement.setAttribute("aria-hidden", "true");
+    // passwordToggleHideSpanElement.setAttribute("class", "password-icon-tooltip hide-password-tooltip hide");
+    // var passwordToggleHideSpanTextElement = document.createTextNode("Hide password");
+    // passwordToggleHideSpanElement.appendChild(passwordToggleHideSpanTextElement);
+    // //
+    // var passwordToggleShowSRSpanElement = document.createElement("span");
+    // passwordToggleShowSRSpanElement.setAttribute("data-label", "show-password");
+    // passwordToggleShowSRSpanElement.setAttribute("class", "screen-reader-only password-toggle-label");
+    // var passwordToggleShowSRSpanTextElement = document.createTextNode("Show password");
+    // passwordToggleShowSRSpanElement.appendChild(passwordToggleShowSRSpanTextElement);
+    // //
+    // var passwordToggleHideSRSpanElement = document.createElement("span");
+    // passwordToggleHideSRSpanElement.setAttribute("data-label", "hide-password");
+    // passwordToggleHideSRSpanElement.setAttribute("class", "screen-reader-only password-toggle-label hide");
+    // var passwordToggleHideSRSpanTextElement = document.createTextNode("Hide password");
+    // passwordToggleHideSRSpanElement.appendChild(passwordToggleHideSRSpanTextElement);
+    // //
+    // var passwordSpanElement = document.createElement("span");
+    // passwordSpanElement.setAttribute("aria-hidden", "true");
+    // passwordSpanElement.setAttribute("class", "password js-required");
+    // // passwordSpanElement.setAttribute("class","cf12e1c5c password js-required");
+    // //
+    // passwordToggleButtonElement.appendChild(passwordToggleShowSpanElement);
+    // passwordToggleButtonElement.appendChild(passwordToggleHideSpanElement);
+    // passwordToggleButtonElement.appendChild(passwordToggleShowSRSpanElement);
+    // passwordToggleButtonElement.appendChild(passwordToggleHideSRSpanElement);
+    // passwordToggleButtonElement.appendChild(passwordSpanElement);
+    // //
+    // //
+    // childDivElement.appendChild(passwordLabelElement);
     childDivElement.appendChild(passwordElement);
-    childDivElement.appendChild(passwordDivElement);
-    childDivElement.appendChild(passwordToggleButtonElement);
+    // childDivElement.appendChild(passwordDivElement);
+    // childDivElement.appendChild(passwordToggleButtonElement);
     //
     var br = document.createElement("br");
     parentDivElement.appendChild(br)
