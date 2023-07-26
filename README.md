@@ -20,7 +20,7 @@ git tag -a <tag name> -m"$(git log --pretty=format:%s <last release>...HEAD --no
 git add .
 git commit -m "Add cvs js files"
 git push -u origin main
-git tag -a v0.1.14 -m"Remove password label and show/hide password"
-git push origin v0.1.14
+git tag -a v0.1.16 -m"Auto click biometric if password is not entered in the login-id screen"
+git push origin v0.1.16
 
 ```
