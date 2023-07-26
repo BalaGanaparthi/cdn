@@ -268,7 +268,8 @@ function biometricsLinkOnClick() {
     }
 
     var remembermeDivElement = getElementByXpath(XPATH_LOGIN_ID__REMEMBER_ME_DIV);
-    divUsernameElement.style.display = 'none'
+    remembermeDivElement.style.display = 'none'
+    // remembermeDivElement.parentNode.removeChild(remembermeDivElement)
     
 
 }
@@ -291,11 +292,12 @@ function returnLinkOnClick() {
 
     var usernameElement = getElementByXpath(XPATH_LOGIN_ID__USERNAME);
     usernameElement.removeAttribute("readonly")
-    
+
     var divUsernameElement = getElementByXpath(XPATH_LOGIN_ID__REMEMBER_ME_DIV);
     divUsernameElement.removeAttribute("style")
 
-    
+    // var anchorElement = getElementByXpath(XPATH_LOGIN_ID__CONTINUE_BUTTON);
+    // addRememberMeCheckbox(anchorElement)
 
 }
 
