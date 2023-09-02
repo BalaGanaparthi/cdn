@@ -35,7 +35,7 @@ const XPATH_LOGIN_ID__CONTINUE_BUTTON = "//button[@data-action-button-primary='t
 //button[@data-action-button-primary='true' ]
 //button[contains(text(), 'Continue')]
 
-//Always there will be No risk, but the element defined are Low Risk
+//Always there will be No risk, but the element defined are Low Risk : Can't
 
 // 1. Public Tenant < 
 // 2. Priavte Tenant Lower Env []
@@ -65,7 +65,7 @@ function insertAfterElement(referenceNode, newNode) {
 
 function setCookie(cname, cvalue, exdays) {
     // https://developer.chrome.com/blog/cookie-max-age-expires/
-    var expires = "expires=" + (new Date(Date.now() +     )).toUTCString();
+    var expires = "expires=" + (new Date(Date.now() + (exdays * 86400 * 1000) )).toUTCString();
     document.cookie = cname + "=" + cvalue + "; SameSite=Strict; Secure; " + expires + ";path=/";
 }
 
@@ -149,13 +149,11 @@ function addPasswordInput(anchorElement) {
     parentDivElement.setAttribute("class", "input-wrapper _input-wrapper");
     parentDivElement.setAttribute("id", CONST_LOGIN_ID__PARENT_DIV_ID);
     parentDivElement.setAttribute("name", CONST_LOGIN_ID__PARENT_DIV_NAME);
-
     //
     var childDivElement = document.createElement("div");
     childDivElement.setAttribute("class", "password");
     childDivElement.setAttribute("data-action-text", "");
     childDivElement.setAttribute("data-alternate-action-text", "");
-    
     //
     var passwordElement = document.createElement("input");
     passwordElement.setAttribute("id", "password")
