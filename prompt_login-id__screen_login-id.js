@@ -5,7 +5,8 @@ const appName = "{{application.name}}";
 var pwdlessCountryCodeButton = getElementByXpath(XPATH_LOGIN_ID__COUNTRYCODE_BUTTON);
 
 if(pwdlessCountryCodeButton != null){
-    pwdlessCountryCodeButton.parentElement.parentElement.appendChild(pwdlessCountryCodeButton)
+    // pwdlessCountryCodeButton.parentElement.parentElement.appendChild(pwdlessCountryCodeButton)
+    pwdlessCountryCodeButton.parentElement.parentElement.firstChild.insertBefore(pwdlessCountryCodeButton)
 }
 
 // if (jsAvailable) {
