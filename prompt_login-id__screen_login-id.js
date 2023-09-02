@@ -5,28 +5,20 @@ const appName = "{{application.name}}";
 var pwdlessCountryCodeButton = getElementByXpath(XPATH_LOGIN_ID__COUNTRYCODE_BUTTON);
 
 if(pwdlessCountryCodeButton != null){
-    // pwdlessCountryCodeButton.parentElement.parentElement.appendChild(pwdlessCountryCodeButton)
-    // pwdlessCountryCodeButton.parentElement.parentElement.firstChild.insertBefore(pwdlessCountryCodeButton)
-    // pwdlessCountryCodeButton.parentElement.insertBefore(pwdlessCountryCodeButton, pwdlessCountryCodeButton.parentElement)
-    const formElement = pwdlessCountryCodeButton.parentElement
-    formElement.removeChild(pwdlessCountryCodeButton)
-    formElement.parentElement.insertBefore(pwdlessCountryCodeButton, formElement)
+
+    
+    // const formElement = pwdlessCountryCodeButton.parentElement
+    // //Remove button from form
+    // formElement.removeChild(pwdlessCountryCodeButton)
+    // //Move CountryCode Picker button above Form
+    // formElement.parentElement.insertBefore(pwdlessCountryCodeButton, formElement)
+    // //Remove Form
+    // formElement.parentElement.removeChild(formElement)
+
+    //Disable the button
+    pwdlessCountryCodeButton.setAttribute("disabled", "")
+
+    //Remove > from the country code button
+    var pwdlessCountryButtonCodeSpan3 = getElementByXpath(XPATH_LOGIN_ID__COUNTRYCODE_BUTTON_SPAN3);
+    pwdlessCountryButtonCodeSpan3.parentElement.removeChild(pwdlessCountryButtonCodeSpan3)
 }
-
-// if (jsAvailable) {
-//     populateUserFromCookie(COOKIE_NAME__LOGGED_IN_ACCT, XPATH_LOGIN_ID__USERNAME)
-
-//     var anchorElement = getElementByXpath(XPATH_LOGIN_ID__CONTINUE_BUTTON);
-//     addPasswordInput(anchorElement);
-//     addRememberMeCheckbox(anchorElement);
-//     overrideButtonClicked(anchorElement);
-
-//     //https://webauthn.me/browser-support
-//     var webAuthNAvailableElement = getElementByXpath(XPATH_LOGIN_ID__WEBAUTHN_AVAILABLE);
-//     var webAuthNPlatformAvailableElement = getElementByXpath(XPATH_LOGIN_ID__WEBAUTHN_PLATFORM_AVAILABLE);
-//     const webAuthNAvailable = webAuthNAvailableElement.getAttribute("value"); // Hardware Authenticators / Roaming Biometrics.. like yubikeys
-//     const webAuthNPlatformAvailable = webAuthNPlatformAvailableElement.getAttribute("value"); // Platform Biometrics.. like macOS Touch ID
-//     if (webAuthNAvailable || webAuthNPlatformAvailable) { //Display only when webauthN (hardware || platform) is supported  
-//         addLoginWithBiometricsLink();
-//     }
-// }
