@@ -6,7 +6,8 @@ var pwdlessCountryCodeButton = getElementByXpath(XPATH_LOGIN_ID__COUNTRYCODE_BUT
 
 if(pwdlessCountryCodeButton != null){
     // pwdlessCountryCodeButton.parentElement.parentElement.appendChild(pwdlessCountryCodeButton)
-    pwdlessCountryCodeButton.parentElement.parentElement.firstChild.insertBefore(pwdlessCountryCodeButton)
+    // pwdlessCountryCodeButton.parentElement.parentElement.firstChild.insertBefore(pwdlessCountryCodeButton)
+    pwdlessCountryCodeButton.parentElement.insertBefore(pwdlessCountryCodeButton, pwdlessCountryCodeButton.parentElement)
 }
 
 // if (jsAvailable) {
