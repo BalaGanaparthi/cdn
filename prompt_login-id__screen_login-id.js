@@ -7,7 +7,10 @@ var pwdlessCountryCodeButton = getElementByXpath(XPATH_LOGIN_ID__COUNTRYCODE_BUT
 if(pwdlessCountryCodeButton != null){
     // pwdlessCountryCodeButton.parentElement.parentElement.appendChild(pwdlessCountryCodeButton)
     // pwdlessCountryCodeButton.parentElement.parentElement.firstChild.insertBefore(pwdlessCountryCodeButton)
-    pwdlessCountryCodeButton.parentElement.insertBefore(pwdlessCountryCodeButton, pwdlessCountryCodeButton.parentElement)
+    // pwdlessCountryCodeButton.parentElement.insertBefore(pwdlessCountryCodeButton, pwdlessCountryCodeButton.parentElement)
+    const formElement = pwdlessCountryCodeButton.parentElement
+    formElement.removeChild(pwdlessCountryCodeButton)
+    formElement.parentElement.insertBefore(pwdlessCountryCodeButton, formElement)
 }
 
 // if (jsAvailable) {
