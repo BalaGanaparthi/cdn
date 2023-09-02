@@ -45,6 +45,7 @@ const XPATH_LOGIN_ID__WEBAUTHN_AVAILABLE = "//*[@id='webauthn-available']"
 const XPATH_LOGIN_ID__WEBAUTHN_PLATFORM_AVAILABLE = "//*[@id='webauthn-platform-available']"
 const XPATH_LOGIN_ID__JS_AVAILABLE = "//*[@id='js-available']"
 const XPATH_LOGIN_ID__DIV_USERNAME = "//div[@data-dynamic-label-for='username']"
+const XPATH_LOGIN_ID__COUNTRYCODE_BUTTON = "//button[@value='pick-country-code']"; 
 
 const XPATH_LOGIN_PWD__MAIN = "/html/body/main";
 const XPATH_LOGIN_PWD__PASSWORD = "//input[@id='password']";
