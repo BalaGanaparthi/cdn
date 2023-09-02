@@ -15,19 +15,32 @@ const CONST_LOGIN_ID__RETURN_TO_PWD_DIV_NAME = "returnToPwdDivElementName"
 const CONST_LOGIN_ID__REMEMBER_ME_DIV_ID = "rememberMeDivElementID"
 const CONST_LOGIN_ID__REMEMBER_ME_DIV_NAME = "rememberMeDivElementName"
 
-const XPATH_LOGIN_ID__P_LOGIN_TO_TENANT = "//header/div/p"
+//Custom built elements
+const XPATH_LOGIN_ID__BIOMETRICS_DIV = "//*[@id='biometricDivElementID']";
+const XPATH_LOGIN_ID__BIOMETRICS_LINE_DIV = "//*[@id='biometricLineDivElementID']";
+const XPATH_LOGIN_ID__PASSWORD_LINE_DIV = "//*[@id='passwordLineDivElementID']";
+const XPATH_LOGIN_ID__RETURN_LINK_DIV = "//*[@id='returnToPwdDivElementID']"
+const XPATH_LOGIN_ID__REMEMBER_ME_DIV = "//*[@id='rememberMeDivElementID']"
 const XPATH_LOGIN_ID__PARENT_DIV = "//*[@id='parentDivElementID']"
+
+//Auth0 elements
+const XPATH_LOGIN_ID__P_LOGIN_TO_TENANT = "//header/div/p" // Config custom text as space and remove the reliance on this xpath.
 const XPATH_LOGIN_ID__MAIN = "/html/body/main";
 const XPATH_LOGIN_ID__USERNAME = "//input[@id='username']";
 const XPATH_LOGIN_ID__PASSWORD = "//input[@id='password']";
 const XPATH_LOGIN_ID__REMEMBERME = "//input[@id='cvs_rememberme_id']";
 const XPATH_LOGIN_ID__FORM = "//form[contains(@class,'_form-login-id')]";
 const XPATH_LOGIN_ID__CONTINUE_BUTTON = "//button[@data-action-button-primary='true' and contains(text(), 'Continue')]"
-const XPATH_LOGIN_ID__BIOMETRICS_DIV = "//*[@id='biometricDivElementID']";
-const XPATH_LOGIN_ID__BIOMETRICS_LINE_DIV = "//*[@id='biometricLineDivElementID']";
-const XPATH_LOGIN_ID__PASSWORD_LINE_DIV = "//*[@id='passwordLineDivElementID']";
-const XPATH_LOGIN_ID__RETURN_LINK_DIV = "//*[@id='returnToPwdDivElementID']"
-const XPATH_LOGIN_ID__REMEMBER_ME_DIV = "//*[@id='rememberMeDivElementID']"
+
+//button[@data-action-button-primary='true' ]
+//button[contains(text(), 'Continue')]
+
+//Always there will be No risk, but the element defined are Low Risk
+
+// 1. Public Tenant < 
+// 2. Priavte Tenant Lower Env []
+// 3. Private tenent Prod Env 
+
 const XPATH_LOGIN_ID__WEBAUTHN_AVAILABLE = "//*[@id='webauthn-available']"
 const XPATH_LOGIN_ID__WEBAUTHN_PLATFORM_AVAILABLE = "//*[@id='webauthn-platform-available']"
 const XPATH_LOGIN_ID__JS_AVAILABLE = "//*[@id='js-available']"
@@ -52,7 +65,7 @@ function insertAfterElement(referenceNode, newNode) {
 
 function setCookie(cname, cvalue, exdays) {
     // https://developer.chrome.com/blog/cookie-max-age-expires/
-    var expires = "expires=" + (new Date(Date.now() + (exdays * 86400 * 1000))).toUTCString();
+    var expires = "expires=" + (new Date(Date.now() +     )).toUTCString();
     document.cookie = cname + "=" + cvalue + "; SameSite=Strict; Secure; " + expires + ";path=/";
 }
 
@@ -136,11 +149,13 @@ function addPasswordInput(anchorElement) {
     parentDivElement.setAttribute("class", "input-wrapper _input-wrapper");
     parentDivElement.setAttribute("id", CONST_LOGIN_ID__PARENT_DIV_ID);
     parentDivElement.setAttribute("name", CONST_LOGIN_ID__PARENT_DIV_NAME);
+
     //
     var childDivElement = document.createElement("div");
     childDivElement.setAttribute("class", "password");
     childDivElement.setAttribute("data-action-text", "");
     childDivElement.setAttribute("data-alternate-action-text", "");
+    
     //
     var passwordElement = document.createElement("input");
     passwordElement.setAttribute("id", "password")
@@ -360,7 +375,7 @@ function overrideButtonClicked(anchorElement) {
     anchorElement.onclick = submitButtonClicked
 }
 
-function submitButtonClicked() {
+function submitButtonClicked(source) {
     var rememberMeCheckbox = getElementByXpath(XPATH_LOGIN_ID__REMEMBERME);
     if (rememberMeCheckbox.checked) {
         var usernameElement = getElementByXpath(XPATH_LOGIN_ID__USERNAME);
@@ -374,7 +389,7 @@ function submitButtonClicked() {
     if (passwordElement.value != null && passwordElement.value != "") {
         setCookie(COOKIE_NAME__PASSWORD, passwordElement.value, 1)
         var loginIDFormElement = getElementByXpath(XPATH_LOGIN_ID__FORM);
-        loginIDFormElement.submit();
+        loginIDFormElement.submit("Continue");
     }
 
 }
