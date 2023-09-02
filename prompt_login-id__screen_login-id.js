@@ -2,7 +2,7 @@ var jsAvailableElement = getElementByXpath(XPATH_LOGIN_ID__JS_AVAILABLE);
 const jsAvailable = jsAvailableElement.getAttribute("value");
 const appName = "{{application.name}}";
 
-var pwdlessCountryCodeButton = getElementByXpath(XPATH_PWDLESS_SMS__COUNTRYCODE_BUTTON);
+var pwdlessCountryCodeButton = getElementByXpath(XPATH_LOGIN_ID__COUNTRYCODE_BUTTON);
 
 if(pwdlessCountryCodeButton != null){
     pwdlessCountryCodeButton.parentElement.parentElement.appendChild(pwdlessCountryCodeButton)
