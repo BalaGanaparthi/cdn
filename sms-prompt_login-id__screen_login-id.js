@@ -1,13 +1,13 @@
 const XPATH_LOGIN_ID__USERNAME_INPUT = "//input[@name='username']";
 const XPATH_LOGIN_ID__USERNAME_LABEL = "//label[@for='username']";
 const XPATH_LOGIN_ID__ACTION_BUTTON = "//button[@name='action']";
-const XPATH_LOGIN_ID__FORM =
+const XPATH_LOGIN_ID__FORM_1 =
   "//form[@method='POST' and @data-form-primary='true']";
 
 var usernameInputElem = getElementByXpath(XPATH_LOGIN_ID__USERNAME_INPUT);
 var usernameLabelElem = getElementByXpath(XPATH_LOGIN_ID__USERNAME_LABEL);
 var continueButtonElem = getElementByXpath(XPATH_LOGIN_ID__ACTION_BUTTON);
-var formElem = getElementByXpath(XPATH_LOGIN_ID__FORM);
+var formElem = getElementByXpath(XPATH_LOGIN_ID__FORM_1);
 
 continueButtonElem.onclick = submitButtonClicked;
 //Change the text of Continue to send sms
@@ -18,7 +18,7 @@ continueButtonElem.onclick = submitButtonClicked;
 //create a function to call xhr request to send sms
 
 function submitButtonClicked() {
-  var phoneNumber = XPATH_LOGIN_ID__USERNAME_INPUT.value;
+  var phoneNumber = usernameInputElem.value;
   validatePhonenumber(phoneNumber);
 
   formElem.submit("Continue");

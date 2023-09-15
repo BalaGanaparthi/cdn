@@ -18,9 +18,9 @@ git tag -a <tag name> -m"$(git log --pretty=format:%s <last release>...HEAD --no
 
 ```sh
 git add .
-git commit -m "Add cvs js files"
+git commit -m "Enhc: Corrected SMS passwordless db page template"
 git push -u origin main
-git tag -a v0.1.20 -m"Auto click biometric if password is not entered in the login-id screen"
-git push origin v0.1.20
+git tag -a v0.1.31 -m"Enhc: Corrected SMS passwordless db page template"
+git push origin v0.1.31
 
 ```
