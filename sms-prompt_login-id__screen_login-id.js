@@ -30,7 +30,7 @@ function submitButtonClicked() {
 
 function validatePhonenumber(phoneNumber) {
   var phoneno = "/^+1d{10}$/$//^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-s./0-9]*$/g";
-  if (phoneNumber.value.match(phoneno)) {
+  if (phoneNumber.match(phoneno)) {
     return true;
   } else {
     alert(
