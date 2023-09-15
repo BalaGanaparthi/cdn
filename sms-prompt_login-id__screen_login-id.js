@@ -1,6 +1,6 @@
 const XPATH_LOGIN_ID__USERNAME_INPUT = "//input[@name='username']";
 const XPATH_LOGIN_ID__USERNAME_LABEL = "//label[@for='username']";
-const XPATH_LOGIN_ID__ACTION_BUTTON = "//button[name='action']";
+const XPATH_LOGIN_ID__ACTION_BUTTON = "//button[@name='action']";
 const XPATH_LOGIN_ID__FORM =
   "//form[@method='POST' and @data-form-primary='true']";
 
