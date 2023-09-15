@@ -57,7 +57,9 @@ function getState() {
 }
 
 function sendSMS(phoneNumber, state) {
-  const data = `{"phone" : "${phoneNumber}", "state" : "${state}"}`;
+  const data = { phone: phoneNumber, state: state };
+  console.log("Send the following payload : " + JSON.stringify(data));
+  alert("Send the following payload : " + JSON.stringify(data));
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "http://localhost:3000/send-sms-otp");
   xhr.setRequestHeader("Content-type", "application/json");
