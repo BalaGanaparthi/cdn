@@ -26,10 +26,11 @@ function submitButtonClicked() {
   //if state is set, send a XHR post request to the backend
   //get the backend state and store in local storage
   //submit page
+  sendSMS(phoneNumber, getState());
 }
 
 function validatePhonenumber(phoneNumber) {
-  var phoneno = "/^+1d{10}$/$//^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-s./0-9]*$/g";
+  var phoneno = "/^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$/im";
   if (phoneNumber.match(phoneno)) {
     return true;
   } else {
@@ -40,4 +41,23 @@ function validatePhonenumber(phoneNumber) {
     );
     return false;
   }
+}
+
+function getState() {
+  const myArray = new Uint32Array(8);
+  let state = "";
+  crypto.getRandomValues(myArray);
+
+  for (const num of myArray) {
+    state += num + "-";
+  }
+  return state;
+}
+
+function sendSMS(phoneNumber, state) {
+  const data = `{"phone" : "${phoneNumber}", "state" : "${state}"}`;
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://localhost:3000/send-sms-otp");
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send(JSON.stringify(data));
 }
