@@ -19,25 +19,25 @@ continueButtonElem.onclick = submitButtonClicked;
 
 function submitButtonClicked() {
   var phoneNumber = usernameInputElem.value;
+  console.log("Phone# ", phoneNumber);
   validatePhonenumber(phoneNumber);
+
+  sendSMS(phoneNumber, getState());
 
   formElem.submit("Continue");
   //Get ext- state
   //if state is set, send a XHR post request to the backend
   //get the backend state and store in local storage
   //submit page
-  sendSMS(phoneNumber, getState());
 }
 
 function validatePhonenumber(phoneNumber) {
-  var phoneno = "/^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$/im";
+  var phoneno = "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$";
   if (phoneNumber.match(phoneno)) {
     return true;
   } else {
     alert(
-      "Phone# [",
-      phoneNumber,
-      "] is invalid, enter a valid phone# and retry"
+      "Phone# [" + phoneNumber + "] is invalid, enter a valid phone# and retry"
     );
     return false;
   }
@@ -51,6 +51,8 @@ function getState() {
   for (const num of myArray) {
     state += num + "-";
   }
+  state = state.substring(0, state.length - 1);
+  console.log("State : " + state);
   return state;
 }
 
