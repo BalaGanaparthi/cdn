@@ -18,9 +18,9 @@ git tag -a <tag name> -m"$(git log --pretty=format:%s <last release>...HEAD --no
 
 ```sh
 git add .
-git commit -m "Enhc: Corrected SMS passwordless db page template"
+git commit -m "Add: Password succe"
 git push -u origin main
-git tag -a v0.1.35 -m"Enhc: Corrected SMS passwordless db page template"
-git push origin v0.1.35
+git tag -a v0.1.36 -m"Enhc: Corrected SMS passwordless db page template"
+git push origin v0.1.36
 
 ```
