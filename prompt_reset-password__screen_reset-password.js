@@ -17,6 +17,16 @@ rtAppAnchor.appendChild(rtAppAnchorTxt);
 
 pwdSuccessTextElem.parentElement.appendChild(rtAppDiv);
 
+function getElementByXpath(path) {
+  return document.evaluate(
+    path,
+    document,
+    null,
+    XPathResult.FIRST_ORDERED_NODE_TYPE,
+    null
+  ).singleNodeValue;
+}
+
 {
   /* <div class="ce7494284 c24f2ad5c c5bf19ed3 c66fbaaf0">
   <a href="https://candle-fossil-bathtub.glitch.me/?iss=https%3A%2F%2Fokta-balaganaparthi-0.us.auth0.com%2F">

@@ -20,7 +20,7 @@ git tag -a <tag name> -m"$(git log --pretty=format:%s <last release>...HEAD --no
 git add .
 git commit -m "Add: Reset password prompt"
 git push -u origin main
-git tag -a v0.1.36 -m "Add: Reset password prompt"
-git push origin v0.1.36
+git tag -a v0.1.38 -m "Add: Reset password prompt"
+git push origin v0.1.38
 
 ```
